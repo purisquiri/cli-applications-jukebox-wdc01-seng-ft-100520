@@ -25,7 +25,6 @@ def play(songs)
   input = gets.strip
   if input.to_i <= songs.length && input.to_i >= 1
     puts "Playing #{songs[input.to_i - 1]}"
-    #binding.pry
     elsif a_song = songs.find{|item| item.include?(input)} 
       puts "Playing " + a_song 
     else
@@ -50,6 +49,13 @@ def run(songs)
   input = gets.strip
   if input == "exit"
     exit_jukebox
+  elsif input == "list"
+    list(songs)
+    elsif input == "play"
+    play(songs)
+    elsif input == "help"
+    help
+    
   end
 #binding.pry    
 end
